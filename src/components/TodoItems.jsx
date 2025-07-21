@@ -3,6 +3,10 @@ import tick from '../assets/tick.png'
 import not_tick from '../assets/not_tick.png'
 import delete_icon from '../assets/delete.png'
 
+{/* Presentational component for an individual task. Receive all
+  relevant data and action handlers as props from Todo.jsx. 
+  Clicking on the checkbox image calls toggle(id) to mark complete/incomplete. 
+  Clicking on the delte icon calls deleteTodo(id) to remove the task. */}
 const TodoItems = ({text, id, isComplete, deleteTodo, toggle}) => {
   return (
     <div className='flex items-center my-3 gap-2'>

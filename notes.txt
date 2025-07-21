@@ -1,0 +1,33 @@
+React depends on detecting changes to state via new object references. We cannot
+mutate objects directly. Otherwise, React might not realize the state changed because 
+the object reference is the same.
+
+Immutable data transformation: copy existing data --> modify just the parts you want -->
+return new versions. This way, React knows exactly what changed and can re-render efficiently.
+
+setToDoList is the state updater function from useState. It takes a function as an argument
+(the "functional update form")
+
+"todos" is simply a key string that you choose to identify this data in the browser's local storage,
+it's NOT a variable in the program. It's a label to retrieve the correct saved value later. It's like:
+localStorage:
+{
+  "todos": "[{id: ..., text: ..., isComplete: ...}, ...]"
+}
+And JSON.parse(localStorage.getItem("todos")) retrieves a 
+
+The localStorage.getItem() method is used in web browsers to retrieve a value 
+from the browser's local storage. This method is part of the Web Storage API, 
+which provides a way for web applications to store data locally within the user's browser.
+let value = localStorage.getItem(key);
+Data stored in localStorage persists even after the browser is closed and reopened.
+
+The localStorage.setItem() method is used in JavaScript to store data in the 
+browser's localStorage object. This method allows you to save key-value pairs that 
+persist even after the user closes the browser or navigates away from the page. 
+localStorage.setItem(keyName, keyValue);
+localStorage can only store strings. 
+
+Array.prototype.map(): This is a method available on all JavaScript arrays. It creates a 
+new array by applying a provided callback function to each element in the calling array.
+ The original array remains unchanged.
